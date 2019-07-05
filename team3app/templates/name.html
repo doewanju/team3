@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<head>
+    <style>
+        @font-face { font-family: 'Goyang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        body{
+            color: 'white';
+            font-family: 'Goyang';
+            background-image : url('/static/back.jpg');
+            background-blend-mode: normal;
+            background-size : contain;
+            background-repeat : no-repeat;
+            background-position: center; 
+        }
+        .container {
+            margin-left : auto;
+            margin-right : auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="{% url 'result' %}" method="POST" style="font-family:'Goyang'; color:white; text-align:center; margin-top: 220px">
+                {%csrf_token%}
+                <br>
+                <h3>당신의 이름을 입력해주세요!</h3><br>
+                <input type="text" name="name" placeholder="이름.....여기.....">
+                <br><br>
+                <h3>좋아하는 계절은 언제인가요?</h3>
+                <h4>
+                <input type="radio" name="season" value="1" checked="checked"> 봄
+                <input type="radio" name="season" value="2"> 여름
+                <input type="radio" name="season" value="3"> 가을
+                <input type="radio" name="season" value="4"> 겨울
+                </h4>
+                <br>
+                <h2>태어난 달을 입력해주세요!</h2>
+                <h4>
+                <input type="radio" name="month" value="1" checked="checked"> 1월
+                <input type="radio" name="month" value="2"> 2월
+                <input type="radio" name="month" value="3"> 3월
+                <input type="radio" name="month" value="4"> 4월
+                <input type="radio" name="month" value="5"> 5월
+                <input type="radio" name="month" value="6"> 6월</h4>
+                <h4>
+                <input type="radio" name="month" value="7"> 7월
+                <input type="radio" name="month" value="8"> 8월
+                <input type="radio" name="month" value="9"> 9월
+                <input type="radio" name="month" value="10"> 10월
+                <input type="radio" name="month" value="11"> 11월
+                <input type="radio" name="month" value="12"> 12월
+                </h4><br>
+                <input type="submit" value="결과보기!!" class="btn btn-outline-warning">
+            </form>    
+    </div>
+    
+</body>
